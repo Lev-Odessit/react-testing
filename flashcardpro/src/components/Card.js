@@ -2,13 +2,9 @@ import React, { Component } from 'react';
 
 class Card extends Component {
 
-	constructor(){
-		super();
-
-		this.state = {
-			reveal: false
-		};
-	}
+	state = {
+		reveal: false
+	};
 
 	switch = () => {
 		this.setState({reveal: true});
