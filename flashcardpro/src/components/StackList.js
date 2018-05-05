@@ -2,13 +2,20 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import stacks from '../data/stacks.json';
 import { Link } from 'react-router-dom';
-import { setStack } from "../actions";
+import { setStack, loadStacks } from "../actions";
 
 
 class StackList extends Component {
+	componentDidMount() {
+		const {loadStacks} = this.props;
+
+		if (this.props.stacks.length === 0) loadStacks(stacks);
+	}
+
+
 	render() {
 
-		const { setStack } = this.props;
+		const { setStack, stacks } = this.props;
 
 		return (
 			<div>
@@ -30,4 +37,8 @@ class StackList extends Component {
 	}
 }
 
-export default connect(null, { setStack })(StackList);
+function mapStateToProps(state) {
+	return { stacks: state.stacks }
+}
+
+export default connect(mapStateToProps, { setStack, loadStacks })(StackList);
