@@ -5,15 +5,15 @@ import App from './App';
 describe('App',() => {
 	const app = shallow(<App />);
 
-	it('it renders the `Flashcard Pro` title', ()=>{
+	it('it renders the `Flashcard Pro` title', () => {
 		expect(app.find('h2').text()).toEqual('Flashcard Pro');
 	});
 
-	it('it renders the StackList', ()=>{
+	it('it renders the StackList', () => {
 		expect(app.find('Connect(StackList)').exists()).toBe(true);
 	});
 
-	it('it renders a link to create new stacks', ()=>{
+	it('it renders a link to create new stacks', () => {
 		expect(app.find('Link h4').text()).toEqual('Create a New Stack');
 	})
 });
