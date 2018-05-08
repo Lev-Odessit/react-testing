@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Card extends Component {
+export class Card extends Component {
 
 	state = {
 		reveal: false
@@ -22,7 +22,7 @@ class Card extends Component {
 				<div className='card-prompt'>
 					<h4>{prompt}</h4>
 				</div>
-				<div className='card-answers'>
+				<div className='card-answer'>
 					<h4 className={revealCondition}>{answer}</h4>
 				</div>
 			</div>
